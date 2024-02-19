@@ -1,11 +1,18 @@
-import React from 'react'
+import React from "react";
+import products from "../products";
+import { useParams } from "react-router-dom";
 
-function ProductsScreen() {
+function ProductsScreen({ match }) {
+  const { id } = useParams(); // Destructure id from useParams()
+
+  const product = products.find((p) => p._id === id);
+
   return (
     <div>
-      Hello
+      {product.name}
+      {product.description}
     </div>
-  )
+  );
 }
 
-export default ProductsScreen
+export default ProductsScreen;
