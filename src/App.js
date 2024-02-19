@@ -3,13 +3,15 @@ import { Container } from "react-bootstrap";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 
+import HomeScreen from "./Screens/HomeScreen";
+
 function App() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="p-3">
         <Container>
-          <h1>Welcome to ProShop</h1>
+         <HomeScreen />
         </Container>
       </main>
 
