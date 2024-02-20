@@ -16,7 +16,6 @@ function ProductsScreen({ match }) {
       const { data } = await axios.get(`/api/products/${id}`);
       setProduct(data);
     };
-
     fetchProducts();
   });
 
