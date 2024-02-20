@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import products from "../products";
 import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Button, Card } from "react-bootstrap";
 import Rating from "../Components/Rating";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
 import { List } from "@mui/material";
+import axios from "axios";
 
 function ProductsScreen({ match }) {
-  const { id } = useParams(); // Destructure id from useParams()
+  const [product, setProduct] = useState([]);
+  const { id } = useParams();
 
-  const product = products.find((p) => p._id == id);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const { data } = await axios.get(`/api/products/${id}`);
+      setProduct(data);
+    };
+
+    fetchProducts();
+  });
 
   return (
     <div>
@@ -75,7 +84,6 @@ function ProductsScreen({ match }) {
                   disabled={product.countInStock === 0}
                   type="button"
                 >
-                 
                   Add To Cart
                 </Button>
               </ListGroup.Item>
