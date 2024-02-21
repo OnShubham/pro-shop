@@ -1,3 +1,10 @@
+# coonect he backend
+ chek the bacckend repo and clone 
+ fisrt start the backend then start the frontend 
+ backend tech : django , djangorestframewrok
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
