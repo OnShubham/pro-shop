@@ -19,7 +19,9 @@ function HomeScreen() {
 
   return (
     <div>
-      <h1>Welcome to ProShop</h1>
+      <h1 className="d-flex justify-content-center p-3 bg-info bg-opacity-10  rounded-end">
+        Welcome to ProShop
+      </h1>
 
       <Row>
         <h1>Latest Products </h1>
