@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
-import products from "../products";
+// import products from "../products";
 import { useParams, Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Button, Card } from "react-bootstrap";
 import Rating from "../Components/Rating";
 import FirstPageIcon from "@mui/icons-material/FirstPage";
-import { List } from "@mui/material";
+// import { List } from "@mui/material";
 import axios from "axios";
 
 function ProductsScreen({ match }) {
   const [product, setProduct] = useState([]);
   const { id } = useParams();
 
+  // Fetching the product from the backend
+
   useEffect(() => {
     const fetchProducts = async () => {
       const { data } = await axios.get(`/api/products/${id}`);
       setProduct(data);
     };
-    fetchProducts();
+    console.log(fetchProducts());
   });
 
   return (
@@ -95,3 +97,4 @@ function ProductsScreen({ match }) {
 }
 
 export default ProductsScreen;
+
